@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Profissional</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MENU DE NAVEGAÇÃO FIXO -->
+    <header class="navbar">
+        <div class="logo">Portfólio</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#sobre-mim">Sobre Mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO: SOBRE MIM -->
+    <section id="sobre-mim" class="section-content">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Seja bem-vindo ao meu portfólio. Sou estudante de Análise e Desenvolvimento de Sistemas e atuo na área de tecnologia, com foco em desenvolvimento de soluções eficientes e lógica de programação.</p>
+            <p>Tenho grande interesse em segurança da informação, arquitetura de sistemas no back-end e resolução de problemas complexos através de código limpo.</p>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: FORMAÇÃO -->
+    <section id="formacao" class="section-content-alt">
+        <div class="container">
+            <h2>Formação Acadêmica & Cursos</h2>
+            <div class="card">
+                <h3>Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</h3>
+                <p><strong>Centro Universitário Internacional UNINTER</strong></p>
+                <p>Cursando - Conclusão prevista para 2027.</p>
+            </div>
+            <div class="card">
+                <h3>Cursos Complementares</h3>
+                <ul>
+                    <li>Fundamentos de Programação Web - UNINTER</li>
+                    <li>Lógica de Programação e Estruturas de Dados</li>
+                    <li>Introdução a Banco de Dados e Consultas SQL</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: PORTFÓLIO -->
+    <section id="portfolio" class="section-content">
+        <div class="container">
+            <h2>Portfólio</h2>
+            <p>Abaixo estão alguns dos projetos e tecnologias com os quais venho trabalhando:</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>Projeto 01 - Este Portfólio</h3>
+                    <p>Desenvolvimento de interface responsiva utilizando HTML5 puríssimo, CSS3 moderno e validações dinâmicas com JavaScript nativo.</p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Projeto 02 - Automações Back-End</h3>
+                    <p>Criação de scripts lógicos para processamento de dados, otimização de rotinas e manipulação de arquivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: CONTATO -->
+    <section id="contato" class="section-content-alt">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Entre em contato preenchendo o formulário abaixo:</p>
+            
+            <!-- FORMULÁRIO COM VALIDAÇÃO -->
+            <form id="form-contato" class="contact-form">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" placeholder="Seu nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="seu.email@dominio.com">
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" rows="5" placeholder="Digite sua mensagem aqui..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensagem</button>
+            </form>
+            <div id="status-mensagem" class="mensagem-sucesso"></div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2026 - Desenvolvido para a Atividade Prática de Fundamentos da Programação Web.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
