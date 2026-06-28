@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio Profissional</title>
+    <title>Vitória | Portfólio Profissional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- MENU DE NAVEGAÇÃO FIXO -->
     <header class="navbar">
-        <div class="logo">Portfólio</div>
+        <div class="logo">Vitória.dev</div>
         <nav>
             <ul class="nav-links">
                 <li><a href="#sobre-mim">Sobre Mim</a></li>
@@ -21,16 +23,14 @@
         </nav>
     </header>
 
-    <!-- SEÇÃO: SOBRE MIM -->
     <section id="sobre-mim" class="section-content">
         <div class="container">
             <h2>Sobre Mim</h2>
-            <p>Olá! Seja bem-vindo ao meu portfólio. Sou estudante de Análise e Desenvolvimento de Sistemas e atuo na área de tecnologia, com foco em desenvolvimento de soluções eficientes e lógica de programação.</p>
-            <p>Tenho grande interesse em segurança da informação, arquitetura de sistemas no back-end e resolução de problemas complexos através de código limpo.</p>
+            <p>Olá! Seja bem-vindo ao meu portfólio. Meu nome é <strong>Vitória</strong>, sou estudante de Análise e Desenvolvimento de Sistemas e atuo na área de tecnologia focando na construção de soluções eficientes e lógica estruturada.</p>
+            <p>Tenho grande interesse em <strong>segurança da informação (Cybersecurity)</strong>, arquitetura de sistemas no <strong>back-end</strong> e resolução de problemas complexos através de código limpo e seguro.</p>
         </div>
     </section>
 
-    <!-- SEÇÃO: FORMAÇÃO -->
     <section id="formacao" class="section-content-alt">
         <div class="container">
             <h2>Formação Acadêmica & Cursos</h2>
@@ -40,53 +40,56 @@
                 <p>Cursando - Conclusão prevista para 2027.</p>
             </div>
             <div class="card">
-                <h3>Cursos Complementares</h3>
+                <h3>Cursos Complementares & Especializações</h3>
                 <ul>
-                    <li>Fundamentos de Programação Web - UNINTER</li>
+                    <li>Fundamentos de Programação Web — UNINTER</li>
                     <li>Lógica de Programação e Estruturas de Dados</li>
+                    <li>Defesa Cibernética e Fundamentos de Segurança</li>
                     <li>Introdução a Banco de Dados e Consultas SQL</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO: PORTFÓLIO -->
     <section id="portfolio" class="section-content">
         <div class="container">
             <h2>Portfólio</h2>
-            <p>Abaixo estão alguns dos projetos e tecnologias com os quais venho trabalhando:</p>
+            <p>Abaixo estão alguns dos projetos em destaque que venho desenvolvendo:</p>
+            
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <h3>Projeto 01 - Este Portfólio</h3>
-                    <p>Desenvolvimento de interface responsiva utilizando HTML5 puríssimo, CSS3 moderno e validações dinâmicas com JavaScript nativo.</p>
+                    <h3>Guia de Autonomia Digital</h3>
+                    <p><strong>Projeto de Extensão Acadêmica</strong></p>
+                    <p>Desenvolvimento de uma plataforma focada em inclusão digital, acessibilidade e segurança para novos usuários de tecnologia. Criado para capacitar pessoas de forma prática no ecossistema digital.</p>
+                    <a href="https://vihcode.github.io/guia-autonomia-digital/" target="_blank" class="btn-link">Acessar Projeto Oficial ↗</a>
                 </div>
+                
                 <div class="portfolio-item">
-                    <h3>Projeto 02 - Automações Back-End</h3>
-                    <p>Criação de scripts lógicos para processamento de dados, otimização de rotinas e manipulação de arquivos.</p>
-                </div>
+                    <h3>Automações & Scripts Back-End</h3>
+                    <p><strong>Desenvolvimento de Software</strong></p>
+                    <p>Criação de scripts lógicos para automação de tarefas, processamento de dados, manipulação segura de arquivos e otimização de rotinas no ecossistema back-end.</p>
+                    </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO: CONTATO -->
     <section id="contato" class="section-content-alt">
         <div class="container">
             <h2>Contato</h2>
             <p>Entre em contato preenchendo o formulário abaixo:</p>
             
-            <!-- FORMULÁRIO COM VALIDAÇÃO -->
             <form id="form-contato" class="contact-form">
                 <div class="form-group">
                     <label for="nome">Nome:</label>
-                    <input type="text" id="nome" placeholder="Seu nome completo">
+                    <input type="text" id="nome" placeholder="Seu nome completo" required>
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail:</label>
-                    <input type="email" id="email" placeholder="seu.email@dominio.com">
+                    <input type="email" id="email" placeholder="seu.email@dominio.com" required>
                 </div>
                 <div class="form-group">
                     <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" rows="5" placeholder="Digite sua mensagem aqui..."></textarea>
+                    <textarea id="mensagem" rows="5" placeholder="Digite sua mensagem aqui..." required></textarea>
                 </div>
                 <button type="submit" class="btn-submit">Enviar Mensagem</button>
             </form>
@@ -94,9 +97,8 @@
         </div>
     </section>
 
-    <!-- RODAPÉ -->
     <footer>
-        <p>&copy; 2026 - Desenvolvido para a Atividade Prática de Fundamentos da Programação Web.</p>
+        <p>&copy; 2026 Vitória. Desenvolvido para a Atividade Prática de Fundamentos da Programação Web.</p>
     </footer>
 
     <script src="script.js"></script>
