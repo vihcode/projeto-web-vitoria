@@ -1,177 +1,285 @@
-/* Configurações Globais de Reset */
+/* ==========================================================================
+   1. Configurações Globais de Reset & Variáveis
+   ========================================================================== */
+:root {
+    /* Paleta de Cores Moderna e Feminina */
+    --bg-primary: #f9f8fc;       /* Fundo geral (um off-white sutilmente arroxeado) */
+    --bg-secondary: #ffffff;     /* Fundo de cards e seções brancas */
+    --bg-alt: #f3effa;           /* Variação de fundo (lavanda bem claro) */
+    
+    --color-primary: #6c5ce7;     /* Roxo principal moderno */
+    --color-secondary: #a29bfe;   /* Roxo claro / Lavanda */
+    --color-dark: #2d3436;        /* Grafite escuro para textos (menos agressivo que o preto) */
+    --color-muted: #636e72;       /* Cinza para textos secundários */
+    
+    --success: #00b894;           /* Verde moderno para mensagens de sucesso */
+    --shadow: 0 8px 24px rgba(108, 92, 231, 0.06); /* Sombra suave levemente arroxeada */
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Poppins dá um ar super moderno */
 }
 
 html {
-    scroll-behavior: smooth; /* Efeito de rolagem suave ao clicar no menu */
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f7f5f0;
-    color: #333;
+    background-color: var(--bg-primary);
+    color: var(--color-dark);
     line-height: 1.6;
 }
 
-/* Menu de Navegação Fixo */
+/* ==========================================================================
+   2. Menu de Navegação (Glassmorphism sutil)
+   ========================================================================== */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #2c3e50;
-    color: #fff;
+    background-color: rgba(255, 255, 255, 0.85); /* Efeito semi-transparente */
+    backdrop-filter: blur(10px); /* Desfoque de fundo moderno */
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.2rem 4rem;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(108, 92, 231, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: var(--transition);
 }
 
 .navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #e67e22; /* Destaque em tom quente */
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 .nav-links li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .nav-links a {
-    color: #fff;
+    color: var(--color-muted);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 5px 0;
+    transition: var(--transition);
+}
+
+/* Linha animada embaixo dos links ao passar o mouse */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: var(--transition);
 }
 
 .nav-links a:hover {
-    color: #e67e22;
+    color: var(--color-primary);
 }
 
-/* Estrutura das Seções */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   3. Estrutura das Seções
+   ========================================================================== */
 .container {
-    max-width: 900px;
+    max-width: 1000px; /* Um pouco mais largo para respirar melhor */
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 24px;
 }
 
 .section-content {
-    padding: 100px 0 60px 0; /* Padding superior para não cobrir o conteúdo com a navbar fixa */
-    background-color: #fff;
+    padding: 120px 0 80px 0;
+    background-color: var(--bg-secondary);
 }
 
 .section-content-alt {
-    padding: 100px 0 60px 0;
-    background-color: #fcfaf2; /* Variação sutil de fundo */
+    padding: 120px 0 80px 0;
+    background-color: var(--bg-alt);
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #2c3e50;
-    border-bottom: 3px solid #e67e22;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--color-dark);
+    position: relative;
     display: inline-block;
-    padding-bottom: 5px;
+    letter-spacing: -0.5px;
+}
+
+/* Detalhe moderno embaixo do título (substituindo a borda grossa antiga) */
+h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
+    margin-top: 8px;
 }
 
 p {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: var(--color-muted);
 }
 
-/* Cards de Formação e Portfólio */
+/* ==========================================================================
+   4. Cards de Formação e Portfólio (Design Clean)
+   ========================================================================== */
 .card, .portfolio-item {
-    background: #fff;
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 6px;
-    border-left: 5px solid #e67e22;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    background: var(--bg-secondary);
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 16px; /* Bordas mais arredondadas e amigáveis */
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(108, 92, 231, 0.05);
+    transition: var(--transition);
+}
+
+/* Efeito flutuante ao passar o mouse */
+.card:hover, .portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(108, 92, 231, 0.12);
 }
 
 .portfolio-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-@media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr; /* Responsividade para celulares */
-    }
-}
-
-/* Formulário de Contato */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    gap: 25px;
     margin-top: 20px;
 }
 
+/* ==========================================================================
+   5. Formulário de Contato
+   ========================================================================== */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-top: 30px;
+    border: 1px solid rgba(108, 92, 231, 0.05);
+}
+
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-dark);
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 14px;
+    border: 1.5px solid #e1e1e1;
+    border-radius: 10px;
     font-size: 1rem;
+    color: var(--color-dark);
+    background-color: #fcfcfd;
+    transition: var(--transition);
 }
 
 .form-group input:focus, .form-group textarea:focus {
-    border-color: #e67e22;
+    border-color: var(--color-primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
     outline: none;
 }
 
 .btn-submit {
-    background-color: #e67e22;
+    background: linear-gradient(135deg, var(--color-primary), #5b4bc4);
     color: white;
     border: none;
-    padding: 12px;
-    font-size: 1.1rem;
-    border-radius: 4px;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    transition: var(--transition);
 }
 
 .btn-submit:hover {
-    background-color: #d35400;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
 }
 
 .mensagem-sucesso {
-    margin-top: 15px;
-    padding: 10px;
-    color: #27ae60;
-    font-weight: bold;
+    margin-top: 20px;
+    padding: 12px;
+    color: var(--success);
+    background-color: rgba(0, 184, 148, 0.1);
+    border-radius: 8px;
+    font-weight: 600;
     text-align: center;
+    font-size: 0.95rem;
 }
 
-/* Rodapé */
+/* ==========================================================================
+   6. Rodapé
+   ========================================================================== */
 footer {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #1e1b29; /* Roxo ultra escuro quase preto */
+    color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     font-size: 0.9rem;
+    font-weight: 400;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   7. Responsividade (Media Queries)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        padding: 25px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
 }
