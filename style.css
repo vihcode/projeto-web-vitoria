@@ -3,13 +3,13 @@
    ========================================================================== */
 :root {
     /* Paleta de Cores Moderna e Feminina */
-    --bg-primary: #f9f8fc;       /* Fundo geral (um off-white sutilmente arroxeado) */
+    --bg-primary: #f9f8fc;       /* Fundo geral (off-white sutilmente arroxeado) */
     --bg-secondary: #ffffff;     /* Fundo de cards e seções brancas */
     --bg-alt: #f3effa;           /* Variação de fundo (lavanda bem claro) */
     
     --color-primary: #6c5ce7;     /* Roxo principal moderno */
     --color-secondary: #a29bfe;   /* Roxo claro / Lavanda */
-    --color-dark: #2d3436;        /* Grafite escuro para textos (menos agressivo que o preto) */
+    --color-dark: #2d3436;        /* Grafite escuro para textos */
     --color-muted: #636e72;       /* Cinza para textos secundários */
     
     --success: #00b894;           /* Verde moderno para mensagens de sucesso */
@@ -21,7 +21,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Poppins dá um ar super moderno */
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -42,7 +42,7 @@ body {
     top: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.85); /* Efeito semi-transparente */
-    backdrop-filter: blur(10px); /* Desfoque de fundo moderno */
+    backdrop-filter: blur(10px); /* Desfoque de fundo */
     -webkit-backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -81,7 +81,7 @@ body {
     transition: var(--transition);
 }
 
-/* Linha animada embaixo dos links ao passar o mouse */
+/* Linha animada embaixo dos links do menu */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -105,7 +105,7 @@ body {
    3. Estrutura das Seções
    ========================================================================== */
 .container {
-    max-width: 1000px; /* Um pouco mais largo para respirar melhor */
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -130,7 +130,7 @@ h2 {
     letter-spacing: -0.5px;
 }
 
-/* Detalhe moderno embaixo do título (substituindo a borda grossa antiga) */
+/* Detalhe gradiente embaixo dos títulos h2 */
 h2::after {
     content: '';
     display: block;
@@ -147,23 +147,40 @@ p {
     color: var(--color-muted);
 }
 
+/* Estilo para listas dentro dos cards */
+ul {
+    list-style-position: inside;
+    margin-top: 10px;
+    color: var(--color-muted);
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
 /* ==========================================================================
-   4. Cards de Formação e Portfólio (Design Clean)
+   4. Cards de Formação e Portfólio
    ========================================================================== */
 .card, .portfolio-item {
     background: var(--bg-secondary);
     padding: 30px;
     margin-top: 20px;
-    border-radius: 16px; /* Bordas mais arredondadas e amigáveis */
+    border-radius: 16px; /* Bordas arredondadas e modernas */
     box-shadow: var(--shadow);
     border: 1px solid rgba(108, 92, 231, 0.05);
     transition: var(--transition);
 }
 
-/* Efeito flutuante ao passar o mouse */
+/* Efeito flutuante ao passar o mouse nos cards */
 .card:hover, .portfolio-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 30px rgba(108, 92, 231, 0.12);
+}
+
+.card h3, .portfolio-item h3 {
+    color: var(--color-dark);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
 }
 
 .portfolio-grid {
@@ -171,6 +188,22 @@ p {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
     margin-top: 20px;
+}
+
+/* Link/Botão do Projeto Oficial */
+.btn-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.btn-link:hover {
+    color: var(--color-secondary);
+    transform: translateX(3px); /* Leve deslocamento para a direita */
 }
 
 /* ==========================================================================
@@ -254,13 +287,18 @@ p {
    6. Rodapé
    ========================================================================== */
 footer {
-    background-color: #1e1b29; /* Roxo ultra escuro quase preto */
+    background-color: #1e1b29; /* Tom de roxo ultra escuro */
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     padding: 30px 20px;
     font-size: 0.9rem;
     font-weight: 400;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0;
 }
 
 /* ==========================================================================
@@ -272,7 +310,7 @@ footer {
     }
     
     .portfolio-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Grid vira uma coluna só no celular */
     }
     
     .contact-form {
